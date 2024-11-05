@@ -20,14 +20,26 @@ export default function HomePage() {
   }, []);
 
   if (cameraPermissao === null) {
-    return <Text>Solicitando permissão para acessar a câmera...</Text>;
+    return (
+      <View style={styles.container}>
+        <Text>Solicitando permissão para acessar a câmera...</Text>
+      </View>
+    );
   }
   if (cameraPermissao === false) {
-    return <Text>Permissão para acessar a câmera foi negada.</Text>;
+    return (
+      <View style={styles.container}>
+        <Text>Permissão para acessar a câmera foi negada.</Text>
+      </View>
+    );
   }
 
   if (!temLanterna) {
-    return <Text>Este dispositivo não possui suporte para lanterna.</Text>;
+    return (
+      <View style={styles.container}>
+        <Text>Este dispositivo não possui suporte para lanterna.</Text>
+      </View>
+    );
   }
 
   return (
